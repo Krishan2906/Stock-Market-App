@@ -4,8 +4,10 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Sign Up</h5>
-            <form class="form-signin">
-  
+            <form class="form-signin" #userSignup="ngForm" autocomplete="off" (submit)="onSubmit(userSignup)">
+              
+              <!-- <h5>{{ loginservices.user | json }}</h5> -->
+
               <div class="form-group">
                 <label for="inputEmail">UserName *</label>
                 <input
@@ -14,6 +16,8 @@
                  id="inputEmail"
                  placeholder="Enter Email"
                  name="username"
+                 #username="ngModel"
+                 [(ngModel)]="loginservices.user.UserName"
                 >
               </div>
               
@@ -25,6 +29,8 @@
                    id="inputPassword" 
                    placeholder="Enter password" 
                    name="password"
+                   #password="ngModel"
+                   [(ngModel)]="loginservices.user.Password"
                   >
               </div>
 
@@ -35,19 +41,22 @@
                  class="form-control rounded"
                  id="inputEmail"
                  placeholder="Enter Email"
-                 name="username"
+                 name="email"
+                 #email="ngModel"
+                 [(ngModel)]="loginservices.user.Email"
                 >
               </div>
   
               <div class="form-group">
-                <label for="inputEmail">C.Number</label>
+                <label for="inputEmail">Phone</label>
                 <input
                  type="number" 
                  class="form-control rounded"
                  id="inputEmail"
                  placeholder="Enter Email"
-                 name="username"
-                 required
+                 name="phone"
+                 #phone="ngModel"
+                 [(ngModel)]="loginservices.user.Phone"
                 >
               </div>
   
