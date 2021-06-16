@@ -54,7 +54,11 @@ namespace User.Api.Repository
         public string UserLogIn(UsersModel user)
         {
             var logger = _context.Users.FirstOrDefault(u => u.UserName == user.UserName);
-            if (logger!=null && logger.UserType.ToLower() == "admin")
+            if (logger == null)
+            {
+                return "You need to signUp";
+            }
+            if (logger.UserType.ToLower() == "admin")
             {
                 return "LogIn with Admin";
             }
@@ -63,9 +67,10 @@ namespace User.Api.Repository
             {
                 if (_localAuth.checkUser(user))
                 {
+                    var token = _localAuth.validateUser(logger);
                     _context.LoggedInUsers.Add(new LoggedInUsers() { UserID = user.UserName });
                     _context.SaveChanges();
-                    return "User LogIn Success";
+                   return token;
                 }
                 return "Check Password or register";
             }
@@ -74,17 +79,25 @@ namespace User.Api.Repository
 
         public string UserSignUp(Users user)
         {
-            if (_localAuth.validateUser(user))
+            var token = _localAuth.validateUser(user);
+            if (token!= "Enter valid username")
             {
                 if (user.UserType.ToLower() == "user")
                 {
+                    user.Password = _localAuth.validateUser(user);
                     _context.Add(user);
                     _context.SaveChanges();
-                    return "User added";
+                    return token;
                 }
                 return "You can not sign up as admin";
             }
             return "Not valid details";
         }
+
+        public string Try(Users user)
+        {
+            return _localAuth.validateUser(user);
+        }
+
     }
 }

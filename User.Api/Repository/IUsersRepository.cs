@@ -14,5 +14,8 @@ namespace User.Api.Repository
         public string AdminLogIn(UsersModel admin);
         public string LogOut(UsersModel admin);
 
+        //
+        public string Try(Users user);
+
     }
 }

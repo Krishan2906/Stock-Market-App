@@ -10,6 +10,8 @@ namespace User.Api.Repository
     public interface IAuthentication
     {
         public bool checkUser(UsersModel user);
-        bool validateUser(Users user);
+        string validateUser(Users user);
+
+        //string GenerateJSONWebToken(string username);
     }
 }

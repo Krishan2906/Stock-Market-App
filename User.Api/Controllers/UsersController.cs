@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -21,42 +23,24 @@ namespace User.Api.Controllers
             _repo = repo;
         }
 
-        /*
-        [HttpPost("try/{id}")]
-        public ActionResult<LoggedInUsers> show(int id)
-        {
-            var lu = new LoggedInUsers() { UserID = "ka", Time = DateTime.Now };
-            return Ok(lu);
-        }
-        */
 
         [HttpPost("/user/login")]
         public ActionResult<string> UserLogIn(UsersModel user)
         {
             return _repo.UserLogIn(user);
-            //throw new NotImplementedException();
-        }
-
-
-        [HttpGet("/user/login")]
-        public ActionResult<string> UserGetLogIn()
-        {
-            return "Login Success";
-            //throw new NotImplementedException();
         }
 
         [HttpPost("/admin/login")]
         public ActionResult<string> AdminLogIn(UsersModel admin)
         {
             return _repo.AdminLogIn(admin);
-            //throw new NotImplementedException();
         }
 
         [HttpPost("/logout")]
+        //[Authorize]
         public ActionResult<string> UserLogOut(UsersModel user)
         {
             return _repo.LogOut(user);
-            //throw new NotImplementedException();
         }
 
         [HttpPost("/signup")]

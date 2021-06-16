@@ -20,7 +20,6 @@ C:\Users\krish\Desktop\Assignment\Project\StockMarketCharting\User.Api\bin\Debug
 C:\Users\krish\Desktop\Assignment\Project\StockMarketCharting\User.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\krish\Desktop\Assignment\Project\StockMarketCharting\User.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\krish\Desktop\Assignment\Project\StockMarketCharting\User.Api\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\krish\Desktop\Assignment\Project\StockMarketCharting\User.Api\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\krish\Desktop\Assignment\Project\StockMarketCharting\User.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\krish\Desktop\Assignment\Project\StockMarketCharting\User.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\krish\Desktop\Assignment\Project\StockMarketCharting\User.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -59,3 +58,4 @@ C:\Users\krish\Desktop\Assignment\Project\StockMarketCharting\User.Api\obj\Debug
 C:\Users\krish\Desktop\Assignment\Project\StockMarketCharting\User.Api\obj\Debug\net5.0\User.Api.genruntimeconfig.cache
 C:\Users\krish\Desktop\Assignment\Project\StockMarketCharting\User.Api\bin\Debug\net5.0\Humanizer.dll
 C:\Users\krish\Desktop\Assignment\Project\StockMarketCharting\User.Api\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\krish\Desktop\Assignment\Project\StockMarketCharting\User.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
